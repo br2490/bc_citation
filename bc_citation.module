@@ -14,7 +14,7 @@ function bc_citation_preprocess(&$variables, $hook)
 function bc_citation_islandora_view_object($object, $user, $page_number, $page_size = '')
 {
     if ($mods = $object['MODS']->content) {
-        $cite = citeproc_bibliography_from_mods(citeproc_default_style(), $mods);
+        $cite = 'Citation for this item: ' . citeproc_bibliography_from_mods(citeproc_default_style(), $mods);
         $object->cite = $cite;
         $for_debug = array();
         $for_debug['MODS'] = $mods;
