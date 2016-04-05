@@ -11,7 +11,7 @@ function bc_citation_preprocess(&$variables, $hook)
 /**
  * Implements hook_islandora_view_object().
  */
-function bc_citation_islandora_view_object($object, $user, $page_number, $page_size)
+function bc_citation_islandora_view_object($object, $user, $page_number, $page_size = '')
 {
     if ($mods = $object['MODS']->content) {
         $cite = citeproc_bibliography_from_mods(citeproc_default_style(), $mods);
